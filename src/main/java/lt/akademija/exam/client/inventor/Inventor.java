@@ -2,7 +2,11 @@ package lt.akademija.exam.client.inventor;
 
 import java.util.Date;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import lt.akademija.exam.client.Client;
@@ -10,6 +14,8 @@ import lt.akademija.exam.client.Client;
 @Entity
 public class Inventor {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	private String inventorName;

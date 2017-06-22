@@ -8,7 +8,10 @@ import javax.persistence.*;
 import lt.akademija.exam.client.inventor.Inventor;
 
 /**
- * @author ggrazevicius
+ * Client Entity...
+ *
+ * @param ...
+ * @return .....
  */
 @Entity
 @NamedQueries({
@@ -17,7 +20,7 @@ import lt.akademija.exam.client.inventor.Inventor;
 public class Client {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     private String firstName;

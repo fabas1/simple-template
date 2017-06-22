@@ -21,6 +21,9 @@ var ClientTableComponent = React.createClass({
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>Born Date</th>
+                        <th>Phone number</th>
+                        <th>Client is Loyal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +31,9 @@ var ClientTableComponent = React.createClass({
                     <tr key={client.id}>
                         <td>{client.firstName}</td>
                         <td>{client.lastName}</td>
+                        <td>{client.bornDate}</td>
+                        <td>{client.phone}</td>
+                        <td>{client.isLoyal}</td>
                     </tr>
                 )}
                 </tbody>

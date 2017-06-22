@@ -8,10 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import lt.akademija.exam.client.Client;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "findAllInventors", query = "select client from Inventor inventor")
+})
 public class Inventor {
 
 	@Id

@@ -19,13 +19,13 @@ public class ClientController {
 
     
     @GetMapping("/api/createclients")
-    @ApiOperation(value = "Returns all flights that are currently in the list")
+    @ApiOperation(value = "creates some clients")
     public void createClients() {
     
         clientRepository.createAll();
     }
     @GetMapping("/api/clients")
-    @ApiOperation(value = "Returns all flights that are currently in the list")
+    @ApiOperation(value = "Returns all clients")
     public List<Client> getClients() {
     	
         return clientRepository.findAll();

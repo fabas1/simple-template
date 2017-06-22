@@ -5,6 +5,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,6 +18,8 @@ public class ClientRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
+    
+    private List<Client> clientList = new ArrayList<Client>();
 
     @Transactional(readOnly = true)
     public Client get(Long id) {
@@ -24,7 +28,17 @@ public class ClientRepository {
 
     @Transactional
     public Client save(Client client) {
-        return entityManager.merge(client);
+    	if(client!=null){
+    		for(Client clientCheck:clientList){
+    			if(
+    					((clientCheck.getFirstName()) != (client.getFirstName())) 
+    				&&	((clientCheck.getLastName()) != (client.getFirstName())) 
+    				&&	((clientCheck.getBornDate()) != (client.getBornDate()))){
+    						return entityManager.merge(client);
+				}
+    		}
+    	}
+        return client;
     }
 
     @Transactional
